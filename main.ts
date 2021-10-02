@@ -24,7 +24,7 @@ let blue_pos = 0
 let change = 0
 let program = 0
 let strip = neopixel.create(DigitalPin.P0, 12, NeoPixelMode.RGB)
-program = 10
+program = 0
 change = 1
 basic.showNumber(program)
 radio.setGroup(42)
@@ -158,6 +158,18 @@ basic.forever(function () {
             strip.setPixelColor(11, neopixel.colors(NeoPixelColors.Indigo))
         } else if (program == 11) {
             strip.clear()
+            strip.setPixelColor(0, neopixel.colors(NeoPixelColors.Red))
+            strip.setPixelColor(1, neopixel.colors(NeoPixelColors.Green))
+            strip.setPixelColor(2, neopixel.colors(NeoPixelColors.White))
+            strip.setPixelColor(3, neopixel.colors(NeoPixelColors.Red))
+            strip.setPixelColor(4, neopixel.colors(NeoPixelColors.Green))
+            strip.setPixelColor(5, neopixel.colors(NeoPixelColors.White))
+            strip.setPixelColor(6, neopixel.colors(NeoPixelColors.Red))
+            strip.setPixelColor(7, neopixel.colors(NeoPixelColors.Green))
+            strip.setPixelColor(8, neopixel.colors(NeoPixelColors.White))
+            strip.setPixelColor(9, neopixel.colors(NeoPixelColors.Red))
+            strip.setPixelColor(10, neopixel.colors(NeoPixelColors.Green))
+            strip.setPixelColor(11, neopixel.colors(NeoPixelColors.White))
         } else {
         	
         }

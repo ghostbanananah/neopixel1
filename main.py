@@ -7,7 +7,7 @@ radio.on_received_number(on_received_number)
 
 def on_button_pressed_a():
     global program, change
-    if program < 9:
+    if program < 11:
         program += 1
     basic.show_number(program)
     change = 1
@@ -28,10 +28,11 @@ blue_pos = 0
 change = 0
 program = 0
 strip = neopixel.create(DigitalPin.P0, 12, NeoPixelMode.RGB)
-program = 0
+program = 10
 change = 1
 basic.show_number(program)
 radio.set_group(42)
+my_orange = neopixel.rgb(255, 70, 0)
 
 def on_forever():
     global change, blue_pos, red_pos
@@ -132,18 +133,44 @@ def on_forever():
             strip.clear()
             strip.set_pixel_color(0, neopixel.colors(NeoPixelColors.WHITE))
             strip.set_pixel_color(1, neopixel.colors(NeoPixelColors.BLACK))
-            strip.set_pixel_color(0, neopixel.colors(NeoPixelColors.WHITE))
-            strip.set_pixel_color(1, neopixel.colors(NeoPixelColors.BLACK))
-            strip.set_pixel_color(0, neopixel.colors(NeoPixelColors.WHITE))
-            strip.set_pixel_color(1, neopixel.colors(NeoPixelColors.BLACK))
-            strip.set_pixel_color(0, neopixel.colors(NeoPixelColors.WHITE))
-            strip.set_pixel_color(1, neopixel.colors(NeoPixelColors.BLACK))
-            strip.set_pixel_color(0, neopixel.colors(NeoPixelColors.WHITE))
-            strip.set_pixel_color(1, neopixel.colors(NeoPixelColors.BLACK))
-            strip.set_pixel_color(0, neopixel.colors(NeoPixelColors.WHITE))
-            strip.set_pixel_color(1, neopixel.colors(NeoPixelColors.BLACK))
-            strip.set_pixel_color(0, neopixel.colors(NeoPixelColors.WHITE))
-            strip.set_pixel_color(1, neopixel.colors(NeoPixelColors.BLACK))
+            strip.set_pixel_color(2, neopixel.colors(NeoPixelColors.WHITE))
+            strip.set_pixel_color(3, neopixel.colors(NeoPixelColors.BLACK))
+            strip.set_pixel_color(4, neopixel.colors(NeoPixelColors.WHITE))
+            strip.set_pixel_color(5, neopixel.colors(NeoPixelColors.BLACK))
+            strip.set_pixel_color(6, neopixel.colors(NeoPixelColors.WHITE))
+            strip.set_pixel_color(7, neopixel.colors(NeoPixelColors.BLACK))
+            strip.set_pixel_color(8, neopixel.colors(NeoPixelColors.WHITE))
+            strip.set_pixel_color(9, neopixel.colors(NeoPixelColors.BLACK))
+            strip.set_pixel_color(10, neopixel.colors(NeoPixelColors.WHITE))
+            strip.set_pixel_color(11, neopixel.colors(NeoPixelColors.BLACK))
+        elif program == 10:
+            strip.clear()
+            strip.set_pixel_color(0, my_orange)
+            strip.set_pixel_color(1, neopixel.colors(NeoPixelColors.INDIGO))
+            strip.set_pixel_color(2, my_orange)
+            strip.set_pixel_color(3, neopixel.colors(NeoPixelColors.INDIGO))
+            strip.set_pixel_color(4, my_orange)
+            strip.set_pixel_color(5, neopixel.colors(NeoPixelColors.INDIGO))
+            strip.set_pixel_color(6, my_orange)
+            strip.set_pixel_color(7, neopixel.colors(NeoPixelColors.INDIGO))
+            strip.set_pixel_color(8, my_orange)
+            strip.set_pixel_color(9, neopixel.colors(NeoPixelColors.INDIGO))
+            strip.set_pixel_color(10, my_orange)
+            strip.set_pixel_color(11, neopixel.colors(NeoPixelColors.INDIGO))
+        elif program == 11:
+            strip.clear()
+            strip.set_pixel_color(0, my_orange)
+            strip.set_pixel_color(1, neopixel.colors(NeoPixelColors.INDIGO))
+            strip.set_pixel_color(2, my_orange)
+            strip.set_pixel_color(3, neopixel.colors(NeoPixelColors.INDIGO))
+            strip.set_pixel_color(4, my_orange)
+            strip.set_pixel_color(5, neopixel.colors(NeoPixelColors.INDIGO))
+            strip.set_pixel_color(6, my_orange)
+            strip.set_pixel_color(7, neopixel.colors(NeoPixelColors.INDIGO))
+            strip.set_pixel_color(8, my_orange)
+            strip.set_pixel_color(9, neopixel.colors(NeoPixelColors.INDIGO))
+            strip.set_pixel_color(10, my_orange)
+            strip.set_pixel_color(11, neopixel.colors(NeoPixelColors.INDIGO))
         else:
             pass
 basic.forever(on_forever)
