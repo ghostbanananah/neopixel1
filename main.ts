@@ -4,7 +4,7 @@ radio.onReceivedNumber(function (receivedNumber) {
     basic.showNumber(program)
 })
 input.onButtonPressed(Button.A, function () {
-    if (program < 9) {
+    if (program < 11) {
         program += 1
     }
     basic.showNumber(program)
@@ -24,10 +24,11 @@ let blue_pos = 0
 let change = 0
 let program = 0
 let strip = neopixel.create(DigitalPin.P0, 12, NeoPixelMode.RGB)
-program = 0
+program = 10
 change = 1
 basic.showNumber(program)
 radio.setGroup(42)
+let my_orange = neopixel.rgb(255, 70, 0)
 basic.forever(function () {
     if (program == 0) {
         for (let index = 0; index < 11; index++) {
@@ -141,6 +142,22 @@ basic.forever(function () {
             strip.setPixelColor(9, neopixel.colors(NeoPixelColors.Black))
             strip.setPixelColor(10, neopixel.colors(NeoPixelColors.White))
             strip.setPixelColor(11, neopixel.colors(NeoPixelColors.Black))
+        } else if (program == 10) {
+            strip.clear()
+            strip.setPixelColor(0, my_orange)
+            strip.setPixelColor(1, neopixel.colors(NeoPixelColors.Indigo))
+            strip.setPixelColor(2, my_orange)
+            strip.setPixelColor(3, neopixel.colors(NeoPixelColors.Indigo))
+            strip.setPixelColor(4, my_orange)
+            strip.setPixelColor(5, neopixel.colors(NeoPixelColors.Indigo))
+            strip.setPixelColor(6, my_orange)
+            strip.setPixelColor(7, neopixel.colors(NeoPixelColors.Indigo))
+            strip.setPixelColor(8, my_orange)
+            strip.setPixelColor(9, neopixel.colors(NeoPixelColors.Indigo))
+            strip.setPixelColor(10, my_orange)
+            strip.setPixelColor(11, neopixel.colors(NeoPixelColors.Indigo))
+        } else if (program == 11) {
+            strip.clear()
         } else {
         	
         }
